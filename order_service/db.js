@@ -1,20 +1,3 @@
-// let orders = [];
-
-// async function createOrder(order) {
-//   orders.push(order);
-//   console.log(`Created order with ID ${order.id}`);
-// }
-
-// async function getOrders() {
-//   console.log(`Retrieving ${orders.length} orders`);
-//   return orders;
-// }
-
-// module.exports = {
-//   createOrder,
-//   getOrders,
-// };
-
 const fs = require('fs');
 const path = require('path');
 
