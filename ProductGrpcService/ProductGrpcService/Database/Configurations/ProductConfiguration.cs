@@ -4,9 +4,9 @@ using ProductGrpcService.Domain.Models;
 
 namespace ProductGrpcService.Database.Configurations;
 
-public class ProductConfiguration : IEntityTypeConfiguration<Product>
+public class ProductConfiguration : IEntityTypeConfiguration<ProductModel>
 {
-    public void Configure(EntityTypeBuilder<Product> builder)
+    public void Configure(EntityTypeBuilder<ProductModel> builder)
     {
         builder.HasKey(p => p.Id);
         builder.Property(p => p.Name).IsRequired();
@@ -14,19 +14,19 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
 
         builder.HasData
         (
-            new Product()
+            new ProductModel()
             {
                 Id = 1,
                 Name = "Apple",
                 Price = 1.15
             },
-            new Product()
+            new ProductModel()
             {
                 Id = 2,
                 Name = "Watermelon",
                 Price = 3.12
             },
-            new Product()
+            new ProductModel()
             {
                 Id = 3,
                 Name = "Orange",

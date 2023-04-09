@@ -4,7 +4,7 @@ namespace ProductGrpcService.Services;
 
 public interface IProductService
 {
-    Task<IEnumerable<Product>> ListAsync();
+    Task<IEnumerable<ProductModel>> ListAsync();
 
-    Task CreateAsync(Product product);
+    Task<ProductModel> CreateAsync(ProductModel productModel);
 }

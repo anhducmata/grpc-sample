@@ -24,9 +24,9 @@ public class ProductsController : ControllerBase
     }
     
     [HttpPost]
-    public async Task<IActionResult> CreateAsync([FromBody] Product product)
+    public async Task<IActionResult> CreateAsync([FromBody] ProductModel productModel)
     {
-        await _productService.CreateAsync(product);
-        return Ok(product);
+        var rs = await _productService.CreateAsync(productModel);
+        return Ok(rs);
     }
 }

@@ -9,6 +9,7 @@
       "ProductGrpcService/1.0.0": {
         "dependencies": {
           "Grpc.AspNetCore": "2.40.0",
+          "Grpc.Tools": "2.53.0",
           "Microsoft.EntityFrameworkCore": "6.0.15",
           "Microsoft.EntityFrameworkCore.InMemory": "6.0.15"
         },
@@ -28,7 +29,7 @@
         "dependencies": {
           "Google.Protobuf": "3.18.0",
           "Grpc.AspNetCore.Server.ClientFactory": "2.40.0",
-          "Grpc.Tools": "2.40.0"
+          "Grpc.Tools": "2.53.0"
         }
       },
       "Grpc.AspNetCore.Server/2.40.0": {
@@ -100,7 +101,7 @@
           }
         }
       },
-      "Grpc.Tools/2.40.0": {},
+      "Grpc.Tools/2.53.0": {},
       "Microsoft.EntityFrameworkCore/6.0.15": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Abstractions": "6.0.15",
@@ -281,12 +282,12 @@
       "path": "grpc.net.common/2.40.0",
       "hashPath": "grpc.net.common.2.40.0.nupkg.sha512"
     },
-    "Grpc.Tools/2.40.0": {
+    "Grpc.Tools/2.53.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-yOAhijs6POv7oISBV9Rdx5YCSdo/+6zCJTB/ULum3GA4RunxVFI0rPnpJM1+YM9yMf+H1/D001ignsepnygPJw==",
-      "path": "grpc.tools/2.40.0",
-      "hashPath": "grpc.tools.2.40.0.nupkg.sha512"
+      "sha512": "sha512-vm8iRSAF/4PN9g555iYZwhCQptSE4cZ8xk5W1TQ+JcHwaHSrBhD+P6H4l0+SqqfzuX7sGpjjOMQJXHSyrERTgw==",
+      "path": "grpc.tools/2.53.0",
+      "hashPath": "grpc.tools.2.53.0.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore/6.0.15": {
       "type": "package",
