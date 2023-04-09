@@ -21,9 +21,8 @@ RUN npm i
 # Copy source code
 COPY . .
 
-# Expose port 3000
 EXPOSE 3000
-EXPOSE 50051
+EXPOSE 50052
 
 # Start the REST API service
 CMD ["npm", "start"]

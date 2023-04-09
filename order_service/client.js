@@ -5,7 +5,7 @@ const OrderService =
   grpc.loadPackageDefinition(packageDefinition).order.OrderService;
 
 const client = new OrderService(
-  'localhost:50051',
+  'localhost:50052',
   grpc.credentials.createInsecure()
 );
 
