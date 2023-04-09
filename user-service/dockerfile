@@ -8,15 +8,13 @@ WORKDIR /app
 COPY protos /app/protos
 COPY main.py /app
 COPY requirements.txt /app
+
 # Install any necessary packages
 RUN apt-get update && apt-get install -y \
     gcc \
     protobuf-compiler \
     python3-dev \
  && rm -rf /var/lib/apt/lists/*
-
-# Copy the protos directory into the container
-COPY protos /app/protos
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
@@ -25,6 +23,7 @@ RUN python3 -m grpc_tools.protoc -I./protos --python_out=. --pyi_out=. --grpc_py
 
 # Make port 50051 available to the world outside this container
 EXPOSE 50051
+EXPOSE 5055
 
 # Run the command to start the gRPC server
 CMD ["python", "main.py"]
