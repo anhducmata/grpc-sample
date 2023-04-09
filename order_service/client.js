@@ -37,7 +37,7 @@ function getOrders() {
 }
 
 async function test() {
-  const order = await createOrder('123', [{ productId: 'binh', quantity: 1 }]);
+  const order = await createOrder('1234', [{ productId: 'binh', quantity: 1 }]);
   console.log(order);
   const orders = await getOrders();
   console.log(orders);
