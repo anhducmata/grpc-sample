@@ -1,20 +1,28 @@
-FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
+# Start with the official .NET 6.0 SDK image
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
+
+# Set the working directory to /app
 WORKDIR /app
-EXPOSE 80
-EXPOSE 443
 
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
-WORKDIR /src
-COPY ["ProductGrpcService.csproj", "./"]
-RUN dotnet restore "ProductGrpcService.csproj"
-COPY . .
-WORKDIR "/src/"
-RUN dotnet build "ProductGrpcService.csproj" -c Release -o /app/build
+# Copy the project file to the working directory
+COPY *.csproj ./
 
-FROM build AS publish
-RUN dotnet publish "ProductGrpcService.csproj" -c Release -o /app/publish
+# Restore NuGet packages
+RUN dotnet restore
 
-FROM base AS final
+# Copy the remaining source code to the working directory
+COPY . ./
+
+# Build the application
+RUN dotnet publish -c Release -o out
+
+# Create a new image to run the application
+FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /app
-COPY --from=publish /app/publish .
+COPY --from=build-env /app/out .
+
+# Expose port 80 for the application
+EXPOSE 5000
+
+# Start the application
 ENTRYPOINT ["dotnet", "ProductGrpcService.dll"]
